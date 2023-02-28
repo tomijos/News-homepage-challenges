@@ -8,7 +8,7 @@
 
     document.querySelector('#menu').addEventListener("click", activarMenu);
 
-    function activarMenu(){
+    function activarMenu(e){
         
         line1.classList.toggle('activaline1');
         line2.classList.toggle('activaline2');
@@ -17,8 +17,33 @@
         document.body.classList.toggle('fijarbody');
     }  
 
-    // Activar el menu responsive
+    // Close main when click outside
     
+    document.addEventListener('click', (e)=>{
+        
+       if (e.target.classList.contains('activa') || e.target.classList.contains('menu-respon') || e.target.classList.contains('menu-bar-hamb') || e.target.tagName ==='UL'){
+        
+       }else{
+        
+        menuRespon.classList.remove('activarMenu'); 
+        line1.classList.remove('activaline1');
+        line2.classList.remove('activaline2');
+        line3.classList.remove('activaline3');
+        document.body.classList.remove('fijarbody');
+       }
+       
+    });
 
+    //Close menu respons when screen is > to 768px
+
+    window.addEventListener('resize', ()=>{
+        if(window.innerWidth <= 768){
+        menuRespon.classList.remove('activarMenu'); 
+        line1.classList.remove('activaline1');
+        line2.classList.remove('activaline2');
+        line3.classList.remove('activaline3');
+        document.body.classList.remove('fijarbody');
+        }
+    });
 
     
