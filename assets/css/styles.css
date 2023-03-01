@@ -14,8 +14,7 @@
 
     body{
         max-width: 1440px;
-        margin: 0 auto; 
-        background-color: aquamarine;   
+        margin: 0 auto;         
     }
     .fijarbody{
         position: fixed;
